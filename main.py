@@ -19,6 +19,10 @@ def count_words(input):
             words_counts[word] += 1
     return words_counts
 
+def popular_words(input, output):
+    word_counts = count_words(input)
+    result = sorted(word_counts.items(), key=lambda x: x[1], reverse=True)[:10]
+    write_file(output,result)
 
 
 
